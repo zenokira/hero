@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class 소지품 {
-	HashMap <String, 아이템> inven;
+	private HashMap <String, 아이템> inven;
 	
 	소지품(){
 		inven = new HashMap<String, 아이템>();
@@ -14,12 +14,12 @@ public class 소지품 {
 		if(hasItem(item))
 		{
 			int n = item.getCount();
-			inven.get(item.toString()).setCount(n);
+			inven.get(item.toString()).아이템수량변경(n);
 		}
 		else
-			inven.put(item.toString(), item);
+			inven.put(item.getName(), item);
 		
-		System.out.println(item.toString() + "를 획득했다");
+		System.out.println(item.getName() + "를 획득했다");
 	}
 	
 	boolean hasItem(아이템 item)
@@ -38,7 +38,7 @@ public class 소지품 {
 		System.out.print("---------------<보유중>---------------");
 		for (String str : inven.keySet() )
 		{
-			(inven.get(str)).아이템보이기();
+			(inven.get(str)).아이템정보보이기();
 		}
 		System.out.print("-------------------------------------");
 		System.out.println();

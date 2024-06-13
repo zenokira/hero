@@ -24,35 +24,14 @@ public class 용사키우기MAIN {
 				
 		while ( true )
 		{
-			Random rand = new Random();
-			int r = 1; //rand.nextInt() % 4 + 1; 
-			
+			int r = 시스템.getRandInt(4) + 1;
 			switch ( r )
 			{
 			case 1: // 아이템 발견
-				player.기쁨();
-				System.out.println();
-				int id = rand.nextInt(1) + 1;
-				int n = rand.nextInt(2) + 1;
-				String Iname = "고구마";
-				
-				아이템 item = new 아이템(Iname,id,n);
-				item.아이템보이기();
-				
-				System.out.println("선택해주세요 ( 1. 획득 , 2. 포기 )");
-				int choice = sc.nextInt();
-				
-				if ( choice == 1) player.setItem(item);
-				else 
-				{
-					System.out.println("아이템을 포기했다.");
-					player.inventory.showItem ();
-				}
-				
-				
-				
+				player.아이템발견();
 				break;
 			case 2: // 몬스터 발견
+				player.몬스터발견();
 				break;
 			case 3: // 마을 발견
 				break;
@@ -65,6 +44,7 @@ public class 용사키우기MAIN {
 	
 	void Initialize(String name)
 	{
+		
 		player = new 용사(name);
 	}
 	
@@ -95,6 +75,7 @@ public class 용사키우기MAIN {
 		}
 	}
 	
+
 	
 
 }
